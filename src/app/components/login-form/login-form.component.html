@@ -1,0 +1,19 @@
+
+
+    <h1>Iniciar Sesion</h1>
+    <div id="login" >
+    <form [formGroup]="inicioModel" (ngSubmit)="iniciarSesion()" class="m-3 col-lg-6">
+        <div class="form-group">
+            <label for="user">Nombre de usuario</label>
+            <input type="text" id="user" formControlName="user" class="form-control">
+           </div>
+      
+        <div class="form-group">
+            <label for="pass">Contraseña </label>
+            <input type="password" id="pass" formControlName="pass" class="form-control">
+        </div>
+    
+             <button class="btn btn-primary">Iniciar Sesion</button>
+          </form> 
+    
+          </div>
