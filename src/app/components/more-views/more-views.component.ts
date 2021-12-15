@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CardItem } from 'src/app/cardItem.model';
+
 
 @Component({
   selector: 'app-more-views',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class MoreViewsComponent implements OnInit {
   
-listadoPelis = [
+listMoreViews = [
 { id: "peli4",
   nombre: "La vida es bella",
   img: "../../../assets/img/peli4.jpg",
@@ -70,14 +72,62 @@ listadoPelis = [
   compra: 760
 }
 ]
+constructor() {
+  
+}
 
+@Output () listadoCarrito = new EventEmitter<CardItem>();
+cardList: any =[];
+
+
+nameItem: string ="";
+priceItem:number= 0;
+quantityItem:number = 1;
+buyType: string = "";
 
   
-  constructor() {
-     
+
+addRent(identifier: string){
+  
+ 
+  
+   for ( let i=0 ; i < this.listMoreViews.length; i++ ){
+     if (this.listMoreViews[i].id == identifier){
+      this.buyType = "Alquiler";
+      this.nameItem= this.listMoreViews[i].nombre;
+      this.priceItem = this.listMoreViews[i].alquiler
+      this.cardList.push(new CardItem(this.nameItem, this.priceItem, this.quantityItem, this.buyType));
+     }
+ 
    }
 
+  console.log (this.cardList);
+}
+
+addBuy(identifier : string){
+
+   for ( let i=0 ; i < this.listMoreViews.length; i++ ){
+     if (this.listMoreViews[i].id == identifier){
+      this.buyType = "Compra";
+      this.nameItem= this.listMoreViews[i].nombre;
+      this.priceItem = this.listMoreViews[i].alquiler
+      this.cardList.push(new CardItem(this.nameItem, this.priceItem, this.quantityItem, this.buyType));
+      this.listadoCarrito.emit(this.cardList);
+    }
+ 
+   }
+
+  //console.log (this.cardList);
+ 
+};
+
+
+
+
   ngOnInit(): void {
+    
   }
+
+  
 
 }

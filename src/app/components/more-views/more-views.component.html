@@ -2,7 +2,7 @@
    <h2>Peliculas Mas Vistas</h2>
     
  <div class="row container-fluid">
-    <div *ngFor="let peliculas of listadoPelis" class="card-group col-3 w-30">
+    <div *ngFor="let peliculas of listMoreViews" class="card-group col-3 w-30">
         <div class="card">
           <img src="{{peliculas.img}}" class=" card-img-top" alt="...">
           <div class="card-body">
@@ -19,7 +19,7 @@
     </div>
       </div>
     
-      <div *ngFor="let peliculas of listadoPelis">
+      <div *ngFor="let peliculas of listMoreViews">
       <div  class="modal fade" id="{{peliculas.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -31,8 +31,8 @@
               <p>{{peliculas.resumen}}</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Alquilar</button>
-              <button type="button" class="btn btn-primary">Comprar</button>
+              <button class="{{peliculas.id}} btn btn-secondary" type="button" (click)="addRent(peliculas.id)" >Alquilar</button>
+              <button class="{{peliculas.id}} btn btn-primary" type="button" (click)="addBuy(peliculas.id)">Comprar</button>
             </div>
           </div>
         </div>

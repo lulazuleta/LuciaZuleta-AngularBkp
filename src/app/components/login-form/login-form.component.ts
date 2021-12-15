@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { loginService } from 'src/app/loginService.service';
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css'],
+  providers: [loginService]
 })
 export class LoginFormComponent implements OnInit {
 
   inicioModel: FormGroup ;
 
-  constructor() { this.inicioModel= new FormGroup ({
+  constructor(private loginService: loginService) { this.inicioModel= new FormGroup ({
     user: new FormControl(),
-    pass: new FormControl() })}
+    pass: new FormControl() })
+    
+  }
 
     iniciarSesion(){
-      console.log("Sesion iniciada correctamente");
-      alert ("Sesion iniciada correctamente");
+      
+      this.loginService.resultadoLogin("Sesion iniciada!!!!");
     }
 
   ngOnInit(): void {
