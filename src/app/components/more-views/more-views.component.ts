@@ -89,19 +89,18 @@ buyType: string = "";
 
 addRent(identifier: string){
   
- 
-  
-   for ( let i=0 ; i < this.listMoreViews.length; i++ ){
-     if (this.listMoreViews[i].id == identifier){
-      this.buyType = "Alquiler";
-      this.nameItem= this.listMoreViews[i].nombre;
-      this.priceItem = this.listMoreViews[i].alquiler
-      this.cardList.push(new CardItem(this.nameItem, this.priceItem, this.quantityItem, this.buyType));
-     }
- 
+  for ( let i=0 ; i < this.listMoreViews.length; i++ ){
+    if (this.listMoreViews[i].id == identifier){
+     this.buyType = "Alquiler";
+     this.nameItem= this.listMoreViews[i].nombre;
+     this.priceItem = this.listMoreViews[i].alquiler
+     this.cardList.push(new CardItem(this.nameItem, this.priceItem, this.quantityItem, this.buyType));
+     
    }
 
-  console.log (this.cardList);
+  }
+  this.listadoCarrito.emit(this.cardList);
+ console.log ("addBuy",this.cardList);
 }
 
 addBuy(identifier : string){
@@ -110,14 +109,14 @@ addBuy(identifier : string){
      if (this.listMoreViews[i].id == identifier){
       this.buyType = "Compra";
       this.nameItem= this.listMoreViews[i].nombre;
-      this.priceItem = this.listMoreViews[i].alquiler
+      this.priceItem = this.listMoreViews[i].compra
       this.cardList.push(new CardItem(this.nameItem, this.priceItem, this.quantityItem, this.buyType));
-      this.listadoCarrito.emit(this.cardList);
+      
     }
  
    }
-
-  //console.log (this.cardList);
+   this.listadoCarrito.emit(this.cardList);
+  console.log ("addBuy",this.cardList);
  
 };
 

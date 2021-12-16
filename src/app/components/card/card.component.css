@@ -1,3 +1,62 @@
 h1{
     text-align: center;
 }
+#contenedor{
+    display: center ;
+    align-items:center ;
+    justify-content:center;
+    margin-right: 25%;
+    margin-left: 25%;
+   
+}
+
+.table{
+    width:759px !important;
+}
+
+thead{
+    background-color: #c8b6ff;
+}
+
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+#nombre {
+    width: 154px ;
+    text-align: center;
+    content: center;
+}
+#transaccion{
+    width: 205px;
+    text-align: center;
+    content: center;
+}
+#restar{
+    width: 45px;
+    text-align: center;
+    content: center;
+}
+#cantidad{
+    width: 167px;
+    text-align: center;
+    content: center;
+}
+#sumar{
+    width: 45px;
+    text-align: center;
+    content: center;
+}
+#precio{
+    width: 126px;
+    text-align: center;
+    content: center;
+}
+
+button{
+    margin-top: 10px;
+    background-color: #c8b6ff !important;
+    border-color: #c8b6ff;
+}

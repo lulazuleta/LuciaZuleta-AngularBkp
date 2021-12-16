@@ -8,15 +8,25 @@ import { CardItem } from 'src/app/cardItem.model';
 })
 export class CardComponent implements OnInit {
 
-  @Input() listadoCarrito: CardItem;
+  //@Input() listadoCarrito: CardItem;
 
   constructor() { 
   }
+array:any=[];
 
-  mostrar(){
-    console.log(this.listadoCarrito);
+  mostrar(listadoCarrito: any){
+   
+    listadoCarrito.forEach((val: any) => this.array.push(Object.assign({}, val)));
+    
+    console.log("ACA ESTÁ LISTADO CARRITO COPIADO",listadoCarrito)
+    
+  }
+
+  finalizarCompra(){
+    alert("compra finalizada")
   }
   ngOnInit(): void {
+
   }
 
 }

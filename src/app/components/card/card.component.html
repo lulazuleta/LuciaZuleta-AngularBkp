@@ -1,7 +1,41 @@
+<app-more-views (listadoCarrito)="mostrar($event)"></app-more-views>
 <h1>Carrito</h1>
+<div id="contenedor">
 
-<div id="cart">
-    
-<button (click)="mostrar();">MOSTRAR INFO</button>
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Transaccion</th>
+            <th>-</th>
+            <th>Cantidad</th>
+            <th>+</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+</table>
+    <table class="table table-responsive table-hover">
+    <div *ngFor="let listado of array" >
+    <tbody id="tabla">
+        <tr>
+            <td id="nombre">{{listado.name}}</td>
+            <td id="tipo">{{listado.type}}</td>
+            <td id="restar"><button>-</button></td>
+            <td id="cantidad"><input type="number" valuemin="1" value="{{listado.quantity}}"></td>
+            <td id="sumar"><button>+</button></td>
+            <td id="precio">{{listado.price}}</td>
+        </tr>
+       
+    </tbody>
+</div>
+</table>
 
+
+
+
+
+
+
+
+  <button class="btn btn-primary" (click)="finalizarCompra()">Finalizar compra</button>
 </div>
