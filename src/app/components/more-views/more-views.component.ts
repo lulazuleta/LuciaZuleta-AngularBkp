@@ -100,7 +100,7 @@ addRent(identifier: string){
 
   }
   this.listadoCarrito.emit(this.cardList);
- console.log ("addBuy",this.cardList);
+ console.log ("addRent",this.cardList);
 }
 
 addBuy(identifier : string){

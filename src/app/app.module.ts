@@ -10,6 +10,10 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/card/card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialExampleComponent } from './material-example/material-example.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,17 @@ import { CardComponent } from './components/card/card.component';
     RegisterFormComponent,
     LoginFormComponent,
     FooterComponent,
-    CardComponent
+    CardComponent,
+    MaterialExampleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, 
+    MatButtonModule,
+    MatCardModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
